@@ -15,9 +15,9 @@ class CreateProgresMapelsTable extends Migration
     {
         Schema::create('progres_mapels', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_user');
-            $table->foreign('id_user')
-              ->references('id')->on('users');
+            $table->unsignedBigInteger('id_siswa');
+            $table->foreign('id_siswa')
+              ->references('id')->on('siswas');
             $table->unsignedBigInteger('id_mapel');
             $table->foreign('id_mapel')
               ->references('id')->on('mapels');

@@ -15,9 +15,9 @@ class CreateNilaisTable extends Migration
     {
         Schema::create('nilais', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_user');
-            $table->foreign('id_user')
-              ->references('id')->on('users');
+            $table->unsignedBigInteger('id_siswa');
+            $table->foreign('id_siswa')
+              ->references('id')->on('siswas');
             $table->unsignedBigInteger('id_soal');
             $table->foreign('id_soal')
               ->references('id')->on('soals');
