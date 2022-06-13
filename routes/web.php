@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\SiswaController;
 
@@ -18,6 +19,8 @@ use App\Http\Controllers\SiswaController;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::resource('/kelas', KelasController::class);
 
 Route::resource('/siswas', SiswaController::class);
 

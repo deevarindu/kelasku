@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kelas;
+use App\Models\SubBab;
 
-class KelasController extends Controller
+class SubBabController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class KelasController extends Controller
      */
     public function index()
     {
-      //
+        //
     }
 
     /**
@@ -36,13 +36,15 @@ class KelasController extends Controller
     public function store(Request $request)
     {
       $request->validate([
-        'kelas' => 'required|unique:kelas|max:3',
+        'judul_sub_bab' => 'required|max:255',
+        'isi_sub_bab' => 'required',
       ]);
-      $kelas = new Kelas([
-        'kelas' => $request->get('kelas'),
+      $sub_bab = new SubBab([
+        'judul_sub_bab' => $request->get('judul_sub_bab'),
+        'isi_sub_bab' => $request->get('isi_sub_bab'),
       ]);
-      $kelas->save();
-      return redirect('/mapels')->with('success', 'Kelas berhasil ditambahkan!');
+      $sub_bab->save();
+      return redirect('/mapels')->with('success', 'Sub Bab berhasil ditambahkan!');
     }
 
     /**

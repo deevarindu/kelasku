@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kelas;
+use App\Models\Soal;
 
-class KelasController extends Controller
+class SoalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class KelasController extends Controller
      */
     public function index()
     {
-      //
+        //
     }
 
     /**
@@ -36,13 +36,27 @@ class KelasController extends Controller
     public function store(Request $request)
     {
       $request->validate([
-        'kelas' => 'required|unique:kelas|max:3',
+        'soal1' => 'required',
+        'jawaban1' => 'required',
+        'soal2' => 'required',
+        'jawaban2' => 'required',
+        'soal3' => 'required',
+        'jawaban3' => 'required',
+        'soal4' => 'required',
+        'jawaban4' => 'required',
       ]);
-      $kelas = new Kelas([
-        'kelas' => $request->get('kelas'),
+      $soal = new Soal([
+        'soal1' => $request->get('soal1'),
+        'jawaban1' => $request->get('jawaban1'),
+        'soal2' => $request->get('soal2'),
+        'jawaban2' => $request->get('jawaban2'),
+        'soal3' => $request->get('soal3'),
+        'jawaban3' => $request->get('jawaban3'),
+        'soal4' => $request->get('soal4'),
+        'jawaban4' => $request->get('jawaban4'),
       ]);
-      $kelas->save();
-      return redirect('/mapels')->with('success', 'Kelas berhasil ditambahkan!');
+      $soal->save();
+      return redirect('/mapels')->with('success', 'Soal berhasil ditambahkan!');
     }
 
     /**

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kelas;
+use App\Models\Bab;
 
-class KelasController extends Controller
+class BabController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class KelasController extends Controller
      */
     public function index()
     {
-      //
+        //
     }
 
     /**
@@ -36,13 +36,13 @@ class KelasController extends Controller
     public function store(Request $request)
     {
       $request->validate([
-        'kelas' => 'required|unique:kelas|max:3',
+        'judul_bab' => 'required|max:255',
       ]);
-      $kelas = new Kelas([
-        'kelas' => $request->get('kelas'),
+      $bab = new Bab([
+        'judul_bab' => $request->get('judul_bab'),
       ]);
-      $kelas->save();
-      return redirect('/mapels')->with('success', 'Kelas berhasil ditambahkan!');
+      $bab->save();
+      return redirect('/mapels')->with('success', 'Bab berhasil ditambahkan!');
     }
 
     /**

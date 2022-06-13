@@ -5,20 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Siswa;
-use App\Models\Mapel;
 
-class Kelas extends Model
+class ProgresKeseluruhan extends Model
 {
-  protected $table = "kelases";
+  protected $table = "progres_keseluruhans";
   protected $fillable = [
-    'kelas'
+    'id_siswa',
+    'progres'
   ];
 
   public function siswa(){
-    return $this->hasMany(Siswa::class);
-  }
-
-  public function mapel(){
-    return $this->hasMany(Mapel::class);
+    return $this->belongsTo(Siswa::class);
   }
 }

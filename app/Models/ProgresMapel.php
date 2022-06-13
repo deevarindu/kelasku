@@ -7,18 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Siswa;
 use App\Models\Mapel;
 
-class Kelas extends Model
+class ProgresMapel extends Model
 {
-  protected $table = "kelases";
+  protected $table = "progres_mapels";
   protected $fillable = [
-    'kelas'
+    'id_siswa',
+    'id_mapel',
+    'progres'
   ];
 
   public function siswa(){
-    return $this->hasMany(Siswa::class);
+    return $this->belongsTo(Siswa::class);
   }
 
   public function mapel(){
-    return $this->hasMany(Mapel::class);
+    return $this->belongsTo(Mapel::class);
   }
 }

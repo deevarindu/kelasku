@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Siswa;
 
 class SiswaController extends Controller
 {
@@ -34,7 +35,18 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $request->validate([
+        'nama' => 'required|max:255',
+        'email' => 'required|email|unique:siswas|max:255',
+        'password' => 'required|min:6',
+      ]);
+      $siswa = new Siswa([
+        'nama' => $request->get('nama'),
+        'email' => $request->get('email'),
+        'password' => $request->get('password'),
+      ]);
+      $siswa->save();
+      return redirect('/siswas')->with('success', 'Siswa berhasil ditambahkan!');
     }
 
     /**

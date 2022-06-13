@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kelas;
+use App\Models\ProgresKeseluruhan;
 
-class KelasController extends Controller
+class ProgresKeseluruhanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class KelasController extends Controller
      */
     public function index()
     {
-      //
+        //
     }
 
     /**
@@ -36,13 +36,12 @@ class KelasController extends Controller
     public function store(Request $request)
     {
       $request->validate([
-        'kelas' => 'required|unique:kelas|max:3',
+        'progres' => 'required|default:0',
       ]);
-      $kelas = new Kelas([
-        'kelas' => $request->get('kelas'),
+      $progres_keseluruhan = new ProgresKeseluruhan([
+        'progres' => $request->get('progres'),
       ]);
-      $kelas->save();
-      return redirect('/mapels')->with('success', 'Kelas berhasil ditambahkan!');
+      $progres_keseluruhan->save();
     }
 
     /**

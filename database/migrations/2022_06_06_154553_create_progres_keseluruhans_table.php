@@ -15,9 +15,9 @@ class CreateProgresKeseluruhansTable extends Migration
     {
         Schema::create('progres_keseluruhans', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_prog_mapel');
-            $table->foreign('id_prog_mapel')
-              ->references('id')->on('progres_mapels');
+            $table->unsignedBigInteger('id_siswa');
+            $table->foreign('id_siswa')
+              ->references('id')->on('siswas');
             $table->integer('progres');
             $table->timestamps();
         });

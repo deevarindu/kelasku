@@ -3,16 +3,22 @@
 @section('container')
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Mata Pelajaran</h1>
+  <h1 class="h2 d-inline">Mata Pelajaran</h1>
+
+  <div>
+    <div class="btn-group mr-2 p-1 bg-success">
+      <a href="/mapels/create" class="btn btn-sm">
+        <i class="bi bi-plus-circle-dotted text-light"></i>
+        <span class="text-light">Tambah Kelas</span>
+      </a>
+    </div>
     <div class="btn-group mr-2 p-1">
-      <a href="/siswas/create" class="btn btn-sm">
+      <a href="/mapels/create" class="btn btn-sm">
         <i class="bi bi-plus-circle-dotted text-light"></i>
         <span class="text-light">Tambah Data</span>
       </a>
     </div>
   </div>
 </div>
-
-
 
 @endsection
