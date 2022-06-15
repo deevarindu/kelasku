@@ -35,7 +35,7 @@ class MapelController extends Controller
      */
     public function store(Request $request)
     {
-      $request->validate([
+      $validateData = $request->validate([
         'kelas' => 'required',
         'nama_mapel' => 'required|max:255',
       ]);
