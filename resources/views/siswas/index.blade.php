@@ -26,31 +26,36 @@
           <h5 class="modal-title" id="exampleModalLabel">Tambah Siswa</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form method="POST" action="/siswas">
+        <form method="POST" action="{{ route('siswas.store') }}" enctype="multipart/form-data">
           @csrf
           <div class="modal-body">
             <div class="mb-3">
               <label for="nama" class="form-label">Nama Lengkap</label>
-              <input type="text" class="form-control" id="nama">
+              <input type="text" class="form-control" id="nama" name="nama">
+              @error('nama')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+              @enderror
             </div>
             <div class="mb-3">
               <label for="kelas" class="form-label">Kelas</label>
-              <input type="number" class="form-control" id="kelas">
+              <input type="number" class="form-control" id="kelas" name="kelas">
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email">
+              <input type="email" class="form-control" id="email" name="email">
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password">
+              <input type="password" class="form-control" id="password" name="password">
             </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-          <button type="submit" class="btn btn-primary">Tambahkan</button>
-        </div>
-      </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">Tambahkan</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

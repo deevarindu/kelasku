@@ -14,7 +14,7 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        return view('siswas.index', ['siswas' => Siswa::all()->sortBy('kelas')]);
+      return view('siswas.index', ['siswas' => Siswa::all()->sortBy('kelas')]);
     }
 
     /**
@@ -24,7 +24,7 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        //
+      return view('siswas.index', ['siswas' => Siswa::all()->sortBy('kelas')]);
     }
 
     /**
@@ -35,8 +35,8 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-      $request->validate([
-        'nama' => 'required|max:255',
+      $validateData = $request->validate([
+        'nama' => 'required',
         'kelas' => 'required',
         'email' => 'required|email|unique:siswas|max:255',
         'password' => 'required|min:6',
