@@ -6,8 +6,9 @@
   <h1 class="h2">Data Siswa</h1>
 
   @if (session('success'))
-  <div class="alert alert-success col-lg-8" role="alert">
+  <div class="alert alert-success alert-dismissible fade show col-lg-8" role="alert">
     {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
   @endif
 
@@ -83,7 +84,7 @@
           <a href="/mapels/1/edit" class="btn btn-sm btn-warning">
             <i class="bi bi-pencil-square"></i>
           </a>
-          <form action="" method="POST" class="d-inline">
+          <form action="{{ route('siswas.destroy', $s) }}" method="POST" class="d-inline">
             @method('DELETE')
             @csrf
             <button class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin ingin menghapus?')">
