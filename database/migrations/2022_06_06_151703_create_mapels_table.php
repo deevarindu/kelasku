@@ -15,8 +15,7 @@ class CreateMapelsTable extends Migration
     {
         Schema::create('mapels', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_kelas')->unsigned();
-            $table->foreign('id_kelas')->references('id')->on('kelases');
+            $table->integer('kelas');
             $table->string('nama_mapel');
             $table->timestamps();
           });

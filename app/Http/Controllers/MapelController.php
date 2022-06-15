@@ -14,7 +14,7 @@ class MapelController extends Controller
      */
     public function index()
     {
-        return view('mapels.index');
+        return view('mapels.index', ['mapels' => Mapel::all()->sortBy('kelas')]);
     }
 
     /**
@@ -36,10 +36,12 @@ class MapelController extends Controller
     public function store(Request $request)
     {
       $request->validate([
+        'kelas' => 'required',
         'nama_mapel' => 'required|max:255',
       ]);
 
       $mapel = new Mapel([
+        'kelas' => $request->get('kelas'),
         'nama_mapel' => $request->get('nama_mapel'),
       ]);
       $mapel->save();
