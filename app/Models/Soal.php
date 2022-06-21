@@ -10,14 +10,8 @@ class Soal extends Model
 {
   protected $table = "soals";
   protected $fillable = [
-    'soal1',
-    'jawaban1',
-    'soal2',
-    'jawaban2',
-    'soal3',
-    'jawaban3',
-    'soal4',
-    'jawaban4',
+    'soal',
+    'jawaban',
     'id_sub_bab',
   ];
 

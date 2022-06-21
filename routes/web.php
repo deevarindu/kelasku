@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\KelasController;
+use App\Http\Controllers\BabController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\SoalController;
+use App\Http\Controllers\SubBabController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +22,12 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::resource('/kelas', KelasController::class);
-
 Route::resource('/siswas', SiswaController::class);
 
 Route::resource('/mapels', MapelController::class);
+
+Route::resource('/babs', BabController::class);
+
+Route::resource('/subbabs', SubBabController::class);
+
+Route::resource('/soals', SoalController::class);

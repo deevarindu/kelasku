@@ -1,16 +1,14 @@
 @extends('layouts.main')
 
 @section('container')
-
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Data Siswa</h1>
-
-  @if (session('success'))
-  <div class="alert alert-success alert-dismissible fade show col-lg-8" role="alert">
+@if (session('success'))
+  <div class="alert alert-success alert-dismissible fade show col-lg-12 mt-4" role="alert">
     {{ session('success') }}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-  @endif
+@endif
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Data Siswa</h1>
 
   {{-- trigger modal --}}
   <div class="btn-group mr-2 p-1" data-bs-toggle="modal" data-bs-target="#modalTambahSiswa">
@@ -81,7 +79,7 @@
         <td>{{ $s->kelas }}</td>
         <td>{{ $s->email }}</td>
         <td>
-          <a href="/mapels/1/edit" class="btn btn-sm btn-warning">
+          <a href="" class="btn btn-sm btn-warning">
             <i class="bi bi-pencil-square"></i>
           </a>
           <form action="{{ route('siswas.destroy', $s) }}" method="POST" class="d-inline">
@@ -91,6 +89,7 @@
               <i class="bi bi-trash"></i>
             </button>
           </form>
+          <a href="" class="btn btn-sm btn-success">Lihat Detail</a>
         </td>
       </tr>
       @endforeach

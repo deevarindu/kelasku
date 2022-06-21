@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Soal;
+use App\Models\SubBab;
 
 class SoalController extends Controller
 {
@@ -14,7 +15,7 @@ class SoalController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -35,28 +36,18 @@ class SoalController extends Controller
      */
     public function store(Request $request)
     {
-      $request->validate([
-        'soal1' => 'required',
-        'jawaban1' => 'required',
-        'soal2' => 'required',
-        'jawaban2' => 'required',
-        'soal3' => 'required',
-        'jawaban3' => 'required',
-        'soal4' => 'required',
-        'jawaban4' => 'required',
+      $validateData = $request->validate([
+        'id_sub_bab' => 'required',
+        'soal' => 'required',
+        'jawaban' => 'required',
       ]);
       $soal = new Soal([
-        'soal1' => $request->get('soal1'),
-        'jawaban1' => $request->get('jawaban1'),
-        'soal2' => $request->get('soal2'),
-        'jawaban2' => $request->get('jawaban2'),
-        'soal3' => $request->get('soal3'),
-        'jawaban3' => $request->get('jawaban3'),
-        'soal4' => $request->get('soal4'),
-        'jawaban4' => $request->get('jawaban4'),
+        'id_sub_bab' => $request->get('id_sub_bab'),
+        'soal' => $request->get('soal'),
+        'jawaban' => $request->get('jawaban'),
       ]);
       $soal->save();
-      return redirect('/mapels')->with('success', 'Soal berhasil ditambahkan!');
+      return redirect(route('soals.show', $soal->id_sub_bab))->with('success', 'Soal berhasil ditambahkan!');
     }
 
     /**
@@ -67,7 +58,7 @@ class SoalController extends Controller
      */
     public function show($id)
     {
-        //
+      return view('soals.index', ['id_sub_bab' => $id, 'soals' => Soal::all()->where('id_sub_bab', $id)]);
     }
 
     /**
@@ -99,8 +90,11 @@ class SoalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Soal $soal)
     {
-        //
+      $id_sub_bab = $soal->id_sub_bab;
+      Soal::destroy($soal->id);
+
+      return redirect(route('soals.show', $id_sub_bab))->with('success', 'Soal berhasil dihapus!');
     }
 }

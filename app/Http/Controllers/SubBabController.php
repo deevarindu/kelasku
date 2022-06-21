@@ -35,16 +35,18 @@ class SubBabController extends Controller
      */
     public function store(Request $request)
     {
-      $request->validate([
+      $validateData = $request->validate([
+        'id_bab' => 'required',
         'judul_sub_bab' => 'required|max:255',
         'isi_sub_bab' => 'required',
       ]);
       $sub_bab = new SubBab([
+        'id_bab' => $request->get('id_bab'),
         'judul_sub_bab' => $request->get('judul_sub_bab'),
         'isi_sub_bab' => $request->get('isi_sub_bab'),
       ]);
       $sub_bab->save();
-      return redirect('/mapels')->with('success', 'Sub Bab berhasil ditambahkan!');
+      return redirect(route('babs.show', $sub_bab->id_bab))->with('success', 'Sub Bab berhasil ditambahkan!');
     }
 
     /**
@@ -53,9 +55,9 @@ class SubBabController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(SubBab $subbab)
     {
-        //
+      return view('mapels.show_materi', ['subbab' => $subbab]);
     }
 
     /**
@@ -87,8 +89,11 @@ class SubBabController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(SubBab $subbab)
     {
-        //
+      $id_bab = $subbab->id_bab;
+      SubBab::destroy($subbab->id);
+
+      return redirect('/babs/'.$id_bab)->with('success', 'Bab berhasil dihapus!');
     }
 }

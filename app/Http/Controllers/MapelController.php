@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mapel;
+use App\Models\Bab;
 
 class MapelController extends Controller
 {
@@ -54,9 +55,9 @@ class MapelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Mapel $mapel)
     {
-        //
+      return view('mapels.show', ['mapel' => $mapel, 'babs' => Bab::all()->where('id_mapel', $mapel->id)]);
     }
 
     /**

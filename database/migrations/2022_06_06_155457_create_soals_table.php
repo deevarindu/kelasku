@@ -18,14 +18,8 @@ class CreateSoalsTable extends Migration
             $table->unsignedBigInteger('id_sub_bab');
             $table->foreign('id_sub_bab')
               ->references('id')->on('sub_babs');
-            $table->text('soal1');
-            $table->text('jawaban1');
-            $table->text('soal2');
-            $table->text('jawaban2');
-            $table->text('soal3');
-            $table->text('jawaban3');
-            $table->text('soal4');
-            $table->text('jawaban4');
+            $table->text('soal');
+            $table->text('jawaban');
             $table->timestamps();
         });
     }

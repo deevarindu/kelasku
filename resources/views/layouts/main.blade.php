@@ -14,6 +14,15 @@
   <!-- Custom styles for this template -->
   <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
+  {{-- trix editor --}}
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/trix.css') }}">
+  <script type="text/javascript" src="{{ asset('js/trix.js') }}"></script>
+
+  <style>
+    trix-toolbar [data-trix-button-group="file-tools"] {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bab;
+use App\Models\SubBab;
+use App\Model\Mapel;
 
 class BabController extends Controller
 {
@@ -35,14 +37,15 @@ class BabController extends Controller
      */
     public function store(Request $request)
     {
-      $request->validate([
+      $validateData = $request->validate([
         'judul_bab' => 'required|max:255',
       ]);
       $bab = new Bab([
+        'id_mapel' => $request->get('id_mapel'),
         'judul_bab' => $request->get('judul_bab'),
       ]);
       $bab->save();
-      return redirect('/mapels')->with('success', 'Bab berhasil ditambahkan!');
+      return redirect(route('mapels.show', $bab->id_mapel))->with('success', 'Bab berhasil ditambahkan!');
     }
 
     /**
@@ -51,9 +54,9 @@ class BabController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Bab $bab)
     {
-        //
+      return view('mapels.show_sub_babs', ['bab' => $bab, 'subbabs' => SubBab::all()->where('id_bab', $bab->id)]);
     }
 
     /**
@@ -85,8 +88,11 @@ class BabController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Bab $bab)
     {
-        //
+      $id_mapel = $bab->id_mapel;
+      Bab::destroy($bab->id);
+
+      return redirect('/mapels/'.$id_mapel)->with('success', 'Bab berhasil dihapus!');
     }
 }

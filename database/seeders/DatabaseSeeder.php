@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
       ]);
       DB::table('mapels')->insert([
         'kelas' => 7,
-        'nama_mapel' => 'Bahasa Inggris',
+        'nama_mapel' => 'Ilmu Pengetahuan Sosial',
       ]);
       DB::table('mapels')->insert([
         'kelas' => 7,
@@ -55,7 +55,7 @@ class DatabaseSeeder extends Seeder
       ]);
       DB::table('mapels')->insert([
         'kelas' => 8,
-        'nama_mapel' => 'Bahasa Inggris',
+        'nama_mapel' => 'Ilmu Pengetahuan Sosial',
       ]);
       DB::table('mapels')->insert([
         'kelas' => 8,
@@ -67,7 +67,7 @@ class DatabaseSeeder extends Seeder
       ]);
       DB::table('mapels')->insert([
         'kelas' => 9,
-        'nama_mapel' => 'Bahasa Inggris',
+        'nama_mapel' => 'Ilmu Pengetahuan Sosial',
       ]);
       DB::table('mapels')->insert([
         'kelas' => 9,
