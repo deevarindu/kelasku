@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ProgresKeseluruhan;
 use App\Helpers\ApiFormatter;
+use Exception;
 
 class ProgresKeseluruhanApiController extends Controller
 {
@@ -36,13 +37,7 @@ class ProgresKeseluruhanApiController extends Controller
      */
     public function store(Request $request)
     {
-      $request->validate([
-        'progres' => 'required|default:0',
-      ]);
-      $progres_keseluruhan = new ProgresKeseluruhan([
-        'progres' => $request->get('progres'),
-      ]);
-      $progres_keseluruhan->save();
+      //
     }
 
     /**

@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\BabApiController;
 use App\Http\Controllers\SoalApiController;
 use App\Http\Controllers\MapelApiController;
@@ -52,3 +53,9 @@ Route::get('soals/show/{id}', [SoalApiController::class, 'show']);
 Route::post('soals/store', [SoalApiController::class, 'store']);
 Route::post('soals/update/{id}', [SoalApiController::class, 'update']);
 Route::get('soals/destroy/{id}', [SoalApiController::class, 'destroy']);
+
+Route::get('nilais', [NilaiController::class, 'index']);
+Route::get('nilais/show/{id}', [NilaiController::class, 'show']);
+Route::post('nilais/store', [NilaiController::class, 'store']);
+Route::post('nilais/update/{id}', [NilaiController::class, 'update']);
+Route::get('nilais/destroy/{id}', [NilaiController::class, 'destroy']);

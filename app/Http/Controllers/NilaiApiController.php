@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Helpers\ApiFormatter;
+use App\Models\Nilai;
+use Exception;
 
 class NilaiApiController extends Controller
 {
@@ -14,7 +16,13 @@ class NilaiApiController extends Controller
      */
     public function index()
     {
-        //
+      $data = Nilai::all();
+
+      if($data){
+        return ApiFormatter::createApi(200, 'Success', $data);
+      }else{
+        return ApiFormatter::createApi(400, 'Failed', $data);
+      }
     }
 
     /**
@@ -35,7 +43,25 @@ class NilaiApiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      try{
+        $request->validate([
+          //
+        ]);
+
+        $nilai = Nilai::create([
+          //
+        ]);
+
+        $data = Nilai::where('id','=',$nilai->id)->get();
+
+        if($data){
+          return ApiFormatter::createApi(200, 'Success', $data);
+        }else{
+          return ApiFormatter::createApi(400, 'Failed', $data);
+        }
+      }catch (Exception $error){
+        return ApiFormatter::createApi(400, 'Failed', $data);
+      }
     }
 
     /**
@@ -46,7 +72,13 @@ class NilaiApiController extends Controller
      */
     public function show($id)
     {
-        //
+      $data = Nilai::where('id','=',$id)->get();
+
+      if($data){
+        return ApiFormatter::createApi(200, 'Success', $data);
+      }else{
+        return ApiFormatter::createApi(400, 'Failed', $data);
+      }
     }
 
     /**
@@ -69,7 +101,27 @@ class NilaiApiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      try{
+        $request->validate([
+          //
+        ]);
+
+        $nilai = Nilai::findOrFail($id);
+
+        $nilai->update([
+          //
+        ]);
+
+        $data = Nilai::where('id','=',$nilai->id)->get();
+
+        if($data){
+          return ApiFormatter::createApi(200, 'Success', $data);
+        }else{
+          return ApiFormatter::createApi(400, 'Failed', $data);
+        }
+      }catch (Exception $error){
+        return ApiFormatter::createApi(400, 'Failed', $data);
+      }
     }
 
     /**
@@ -80,6 +132,18 @@ class NilaiApiController extends Controller
      */
     public function destroy($id)
     {
-        //
+      try{
+        $nilai = Nilai::findOrFail($id);
+
+        $data = $nilai->delete();
+
+        if($data){
+          return ApiFormatter::createApi(200, 'Success Delete');
+        }else{
+          return ApiFormatter::createApi(400, 'Failed', $data);
+        }
+      } catch (Exception $error){
+        return ApiFormatter::createApi(400, 'Failed', $data);
+      }
     }
 }

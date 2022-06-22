@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ProgresMapel;
 use App\Helpers\ApiFormatter;
+use Exception;
 
 class ProgresMapelApiController extends Controller
 {
@@ -15,7 +16,13 @@ class ProgresMapelApiController extends Controller
      */
     public function index()
     {
-        //
+      $data = ProgresMapel::all();
+
+      if($data){
+        return ApiFormatter::createApi(200, 'Success', $data);
+      }else{
+        return ApiFormatter::createApi(400, 'Failed', $data);
+      }
     }
 
     /**
@@ -36,13 +43,7 @@ class ProgresMapelApiController extends Controller
      */
     public function store(Request $request)
     {
-      $request->validate([
-        'progres' => 'required|default:0',
-      ]);
-      $progres_mapel = new ProgresMapel([
-        'progres' => $request->get('progres'),
-      ]);
-      $progres_mapel->save();
+      //
     }
 
     /**
