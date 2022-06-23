@@ -45,11 +45,14 @@ class NilaiApiController extends Controller
     {
       try{
         $request->validate([
-          //
+          'id_siswa' => 'required',
+          'id_soal' => 'required',
         ]);
 
         $nilai = Nilai::create([
-          //
+          'id_siswa' => $request->id_siswa,
+          'id_soal' => $request->id_soal,
+          'nilai' => $request->nilai,
         ]);
 
         $data = Nilai::where('id','=',$nilai->id)->get();
@@ -103,13 +106,16 @@ class NilaiApiController extends Controller
     {
       try{
         $request->validate([
-          //
+          'id_siswa' => 'required',
+          'id_soal' => 'required',
         ]);
 
         $nilai = Nilai::findOrFail($id);
 
         $nilai->update([
-          //
+          'id_siswa' => $request->id_siswa,
+          'id_soal' => $request->id_soal,
+          'nilai' => $request->nilai,
         ]);
 
         $data = Nilai::where('id','=',$nilai->id)->get();

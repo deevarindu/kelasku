@@ -21,7 +21,7 @@ class CreateNilaisTable extends Migration
             $table->unsignedBigInteger('id_soal');
             $table->foreign('id_soal')
               ->references('id')->on('soals');
-            $table->decimal('nilai');
+            $table->decimal('nilai')->nullable();
             $table->timestamps();
         });
     }
