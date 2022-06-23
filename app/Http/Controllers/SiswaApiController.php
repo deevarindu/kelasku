@@ -109,7 +109,7 @@ class SiswaApiController extends Controller
         $request->validate([
           'nama' => 'required',
           'kelas' => 'required',
-          'email' => 'required|email|unique:siswas|max:255',
+          'email' => 'required|email|max:255',
           'password' => 'required|min:6',
         ]);
 
