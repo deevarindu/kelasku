@@ -89,7 +89,6 @@
               <i class="bi bi-trash"></i>
             </button>
           </form>
-          <a href="" class="btn btn-sm btn-success">Lihat Detail</a>
         </td>
       </tr>
       @endforeach
