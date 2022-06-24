@@ -436,39 +436,20 @@ class DatabaseSeeder extends Seeder
                             <li>kinesik, yaitu gerak kecil-kecil dari tangan atau wajah.</li>
                           </ol>'
       ]);
-      /*DB::table('sub_babs')->insert([
-        'id_bab' => 4,
-        'judul_sub_bab' => '',
-        'isi_sub_bab' => ''
-      ]);
-      DB::table('sub_babs')->insert([
-        'id_bab' => 5,
-        'judul_sub_bab' => '',
-        'isi_sub_bab' => ''
-      ]);
-      DB::table('sub_babs')->insert([
-        'id_bab' => 6,
-        'judul_sub_bab' => '',
-        'isi_sub_bab' => ''
-      ]);
-      */
+
 
     // SUBBAB BAHASA INDONESIA KELAS 8
 
-      /*DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+      DB::table('sub_babs')->insert([
+        'id_bab' => 18,
         'judul_sub_bab' => 'Hiburan',
-        'isi_sub_bab' => '<div>1.	Wawancara terdiri atas dua jenis yaitu wawancara ragam formal dan wawancara ragam tidak formal.
-                                  Berdasarkan ragam tersebut, kamu dapat membuat pertanyaan sesuai dengan konteks dan situasi.</div>
-                          <div>2.	Laporan yang telah kamu pelajari adalah laporan dalam bentuk berita. Membuat laporan sama halnya seperti menyajikan berita.
-                                  Dalam menganalisis laporan berita harus diperhatikan aspek: apa, siapa, di mana, kapan, mengapa, dan bagaiamana kejadian tersebut.</div>
-                          <div>3.	Kunci keberhasilan menulis petunjuk, yaitu memerhatikan sistematika penulisan, kejelasan kalimat, dan ketepatan informasi.
-                                  Ketiga hal tersebut dimaksudkan agar petunjuk yang kamu buat mudah dipahami.</div>
-                          <div>4.	Saat mengidentifikasi unsur drama, kamu harus memerhatikan keseluruhan isi cerita atau unsur intrinsik, yang terdiri atas dialog, alur, tokoh, latar, tema, dan amanat.</div>'
+        'isi_sub_bab' => "<div>Wawancara terdiri atas dua jenis yaitu wawancara ragam formal dan wawancara ragam tidak formal. Berdasarkan ragam tersebut, kamu dapat membuat pertanyaan sesuai dengan konteks dan situasi<br><br>Laporan yang telah kamu pelajari adalah laporan dalam bentuk berita. Membuat laporan sama halnya seperti menyajikan berita. Dalam menganalisis laporan berita harus diperhatikan aspek: apa, siapa, di mana, kapan, mengapa, dan bagaiamana kejadian tersebut<br><br>Kunci keberhasilan menulis petunjuk, yaitu memerhatikan sistematika penulisan, kejelasan kalimat, dan ketepatan informasi. Ketiga hal tersebut dimaksudkan agar petunjuk yang kamu buat mudah dipahami.<br><br>Saat mengidentifikasi unsur drama, kamu harus memerhatikan keseluruhan isi cerita atau unsur intrinsik, yang terdiri atas dialog, alur, tokoh, latar, tema, dan amanat.</div><div><br></div>",
+            "created_at" => "2022-06-24T15:02:49.000000Z",
+            "updated_at" => "2022-06-24T15:02:49.000000Z"
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 18,
         'judul_sub_bab' => 'Pendidikan',
         'isi_sub_bab' => '<div>1.	Pada Pelajaran 1 Bagian B, kamu telah belajar menganalisis isi laporan. Mengisi laporan berbeda dengan menganalisis laporan, demikian pula saat menanggapinya.
                                   Saat menanggapi isi laporan, kamu harus memilih pendapat yang disusun berdasarkan hasil analisis</div>
@@ -479,7 +460,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 18,
         'judul_sub_bab' => 'Peristiwa',
         'isi_sub_bab' => '<div>1.	Laporan lisan perlu memperhatikan sistematika penyampaian yang terdiri dari urutan ruang, waktu, dan topik berita.</div>
                           <div>2.	Saat ingin menemukan tempat atau arah, kamu harus berpatokan pada tempat sekarang kamu berada.</div>
@@ -490,7 +471,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 19,
         'judul_sub_bab' => 'Peristiwa',
         'isi_sub_bab' => '<div>1.	Hal utama yang harus diperhatikan saat kamu membaca cepat adalah pergerakan bola matamu.
                                   Saat membaca cepat lehermu jangan ikut bergerak, karena cukup mata saja yang mengikuti tulisan.</div>
@@ -501,7 +482,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 19,
         'judul_sub_bab' => 'Kegiatan',
         'isi_sub_bab' => '<div>1.	Dalam pembelajaran penulisan surat dinas, terlebih dahulu kamu harus membedakan tata cara menulis surat resmi dan surat tidak resmi.
                                   Setelah memahaminya, kamu akan mudah untuk menulis surat dinas ataupun jenis surat lainnya.</div>
@@ -512,7 +493,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 19,
         'judul_sub_bab' => 'Ilmu Pengetahuan Populer',
         'isi_sub_bab' => '<div>1.	Laporan merupakan suatu berita tentang peristiwa dengan memerhatikan aspek 5W + 1H.</div>
                           <div>2.	Kutipan novel berisi ringkasan, kometar tentang identitas novel, pengarang, penggunaan gaya bahasa, penokohan, pesan, kesan dan lain-lain.</div>
@@ -522,7 +503,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 20,
         'judul_sub_bab' => 'Kegemaran',
         'isi_sub_bab' => '<div>1.	Dalam manjelaskan tema dan latar novel, kamu harus membaca dan mengidentifikasikan terlebih dahulu unsur intrinsik yang terdapat dalam novel.
                                   Dengan membaca keseluruhan isi cerita, kamu akan mudah mencari tema dan menjelaskannya.
@@ -537,7 +518,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 20,
         'judul_sub_bab' => 'Lingkungan Sekitar',
         'isi_sub_bab' => '<div>1.	Pengembangan alur cerita dalam sebuah novel biasanya dari pengenalan cerita, pengungkapan peristiwa, menuju pada konflik, puncak konflik dan yang terakhir adalah penyelesaian masalah.</div>
                           <div>2.	Pada dasarnya, perdebatan dalam sebuah diskusi merupakan hal yang wajar, selama proses perdebatan itu berjalan positif dan lancar untuk mencari solusi bersama.
@@ -548,7 +529,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 20,
         'judul_sub_bab' => 'Kehidupan',
         'isi_sub_bab' => '<div>1.	Untuk mengidentifikasi karakter tokoh novel, kamu harus membaca dengan melibatkan diri kita secara emosional serta memberikan rasa empati dan rasa suka.</div>
                           <div>2.	Dalam menilai dan menjelaskan unsur-unsur sebuah novel, yang harus kamu lakukan adalah memerhatikan dari segi sisi cerita, tokoh, dan latar novel tersebut.</div>
@@ -559,7 +540,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 20,
         'judul_sub_bab' => 'Kesenian',
         'isi_sub_bab' => '<div>1.	Berita adalah sajian informasi yang harus kita ikuti perkembangannya.
                                   Saat mendengar berita, kamu harus memerhatikan tanda intonasi agar tidak terjadi salah terima informasi saat kita mengemukakannya kembali.</div>
@@ -569,12 +550,11 @@ class DatabaseSeeder extends Seeder
                           <div>4.	Menulis puisi bebas harus memerhatikan rambu-rambu penulisan, seperti rima.
                                   Rima dalam sebuah puisi memegang peranan penting dari estetika pendukung isi.</div>'
       ]);
-      */
 
       // SUBBAB BAHASA INDONESIA KELAS 9
 
-      /*DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+      DB::table('sub_babs')->insert([
+        'id_bab' => 21,
         'judul_sub_bab' => 'Kegiatan Kemanusiaan',
         'isi_sub_bab' => '<div>1.	Syair adalah salah satu jenis puisi lama yang berasal dari Persia (sekarang Iran) dan dibawa masuk ke Nusantara bersama-sama dengan kedatangan Islam.</div>
                           <div>2.	Daftar indeks berisi indeks nama (indeks pengarang), indeks topik, perincian indeks topik, dan nomor halaman di mana istilah atau nama tersebut berada.</div>
@@ -586,7 +566,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 21,
         'judul_sub_bab' => 'Kesenian',
         'isi_sub_bab' => '<div>1.	Berita adalah sajian informasi yang harus kita ikuti perkembangannya.
                                   Saat mendengar berita, kamu harus memerhatikan tanda intonasi agar tidak terjadi salah terima informasi saat kita mengemukakannya kembali.</div>
@@ -598,7 +578,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 21,
         'judul_sub_bab' => 'Macam-Macam Peristiwa',
         'isi_sub_bab' => '<div>1.	Hal-hal yang harus diperhatikan dalam memberikan komentar terhadap pendapat narasumber dalam dialog interaktif yakni
                                   bahasa yang digunakan harus komunikatif, menggunakan kata dan kalimat yang baik dan lugas, dan komentar harus disertai alasan yang kuat dan contoh yang terdapat di masyarakat.</div>
@@ -609,7 +589,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 22,
         'judul_sub_bab' => 'Perkembangan Alat Komunikasi',
         'isi_sub_bab' => '<div>1.	Setiap puisi lama (tak terkecuali syair) terikat oleh beberapa hal seperti jumlah baris, jumlah bait, dan persajakan.</div>
                           <div>2. Dalam menceritakan kembali isi cerpen, unsur-unsur intrinsik dalam cerpen tersebut harus diuraikan secara jelas dan disertai dengan pengungkapan hal-hal yang menarik atau berkesan dalam cerpen tersebut.</div>
@@ -619,7 +599,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 22,
         'judul_sub_bab' => 'Kegemaran Manusia',
         'isi_sub_bab' => '<div>1.	Isi dialog interaktif dapat kalian simpulkan setelah mendengarkan dengan saksama pelaksanaan dialog tersebut.</div>
                           <div>2.	Indeks nama berisi informasi tentang nama-nama tokoh yang berkaitan dengan isi buku tersebut.</div>
@@ -629,7 +609,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 22,
         'judul_sub_bab' => 'Manusia dan Kebutuhannya',
         'isi_sub_bab' => '<div>1.	Tokoh utama dalam novel terbagi atas dua macam, yaitu tokoh protagonis dan tokoh antagonis. Tokoh protagonis yaitu tokoh utama yang mendukung jalannya cerita (biasanya berwatak baik).
                                   Ada pun tokoh antagonis yaitu tokoh yang mempunyai konflik dengan tokoh protagonis (biasanya berwatak jahat)..</div>
@@ -642,7 +622,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 23,
         'judul_sub_bab' => 'Kondisi Pertanian di Indonesia',
         'isi_sub_bab' => '<div>1.	Alur terdiri atas tiga macam yaitu alur maju, alur mundur, dan alur campuran.</div>
                           <div>2.	Ada empat macam metode dalam menyampaikan pidato, yakni metode impromtu, metode ekstemporan, metode menghafal, dan metode naskah.</div>
@@ -651,7 +631,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 23,
         'judul_sub_bab' => 'Kebersihan Lingkungan 1',
         'isi_sub_bab' => '<div>1.	Tujuan penyampaian pidato yaitu memotivasi, memersuasi, melakukan tindakan, menginformasikan, dan menghibur.</div>
                           <div>2. Latihan-latihan yang dapat dilakukan untuk melatih kemampuan drama yakni membaca puisi, menirukan binatang, menirukan orang, tertawa dan menangis, berdialog, gerak kerja panggung, serta bermain drama.</div>
@@ -660,7 +640,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 23,
         'judul_sub_bab' => 'Minat Remaja terhadap Olahraga dan Pariwisata',
         'isi_sub_bab' => '<div>1. Ada beberapa hal yang perlu kalian perhatikan ketika memberikan komentar terhadap isi pidato, yaitu komentar harus disertai dengan alasan atau bukti yang logis dan disampaikan dengan bahasa yang santun.</div>
                           <div>2. Unsur-unsur dalam lakon drama terdiri atas tema, amanat, plot (alur), karakter (perwatakan), dialog, latar, bahasa, dan interpretasi.</div>
@@ -669,13 +649,13 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('sub_babs')->insert([
-        'id_bab' => 4,
+        'id_bab' => 23,
         'judul_sub_bab' => 'Kesenian yang Berasal dari Indonesia',
         'isi_sub_bab' => '<div>1. Penggambaran watak tokoh dapat kalian ketahui melalui tiga cara yakni dari segi fisis, segi psikis, dan segi sosiologis.</div>
                           <div>2.	Kerangka karya tulis ilmiah minimal terdiri atas tiga bagian yakni pendahuluan, isi, dan penutup.</div>
                           <div>3.	Preposisi dari hanya dipakai untuk menyatakan asal, sedangkan preposisi daripada dipakai untuk menyatakan perbandingan.</div>'
       ]);
-      */
+
 
       // SUBBAB MATEMATIKA KELAS 7
       DB::table('sub_babs')->insert([
@@ -1078,5 +1058,5 @@ class DatabaseSeeder extends Seeder
         "created_at" => "2022-06-24T14:05:15.000000Z",
         "updated_at" => "2022-06-24T14:05:15.000000Z"
       ]);
-    }
 }
+ }
