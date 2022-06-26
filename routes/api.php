@@ -8,6 +8,7 @@ use App\Http\Controllers\SoalApiController;
 use App\Http\Controllers\MapelApiController;
 use App\Http\Controllers\SiswaApiController;
 use App\Http\Controllers\SubBabApiController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,15 +21,20 @@ use App\Http\Controllers\SubBabApiController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::get('siswas', [SiswaApiController::class, 'index']);
 Route::get('siswas/show/{id}', [SiswaApiController::class, 'show']);
 Route::post('siswas/store', [SiswaApiController::class, 'store']);
 Route::post('siswas/update/{id}', [SiswaApiController::class, 'update']);
 Route::get('siswas/destroy/{id}', [SiswaApiController::class, 'destroy']);
+
+Route::post('/auth/register', [SiswaApiController::class, 'register']);
+Route::post('/auth/login', [SiswaApiController::class, 'login']);
+
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
 
 Route::get('mapels', [MapelApiController::class, 'index']);
 Route::get('mapels/show/{id}', [MapelApiController::class, 'show']);

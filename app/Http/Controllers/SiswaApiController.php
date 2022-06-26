@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Siswa;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use App\Helpers\ApiFormatter;
 use Exception;
 
@@ -155,5 +157,45 @@ class SiswaApiController extends Controller
         return ApiFormatter::createApi(400, 'Failed', $data);
       }
 
+    }
+
+    public function register(Request $req)
+    {
+        $data = [
+            'nama' => 'required',
+            'kelas' => 'required',
+            'email' => 'required|email|unique:siswas|max:255',
+            'password' => 'required|min:6'
+        ];
+        $validator = Validator::make($req->all(), $data);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
+        $user = Siswa::create([
+          'nama' => $req->nama,
+          'kelas' => $req->kelas,
+          'email' => $req->email,
+          'password' => Hash::make($req->password)
+        ]);
+        $token = $user->createToken('Personal Access Token')->plainTextToken;
+        $response = ['user' => $user, 'token' => $token];
+        return response()->json($response, 200);
+    }
+
+    public function login(Request $req)
+    {
+        $data = [
+          'email' => 'required',
+          'password' => 'required'
+        ];
+        $req->validate($data);
+        $user = Siswa::where('email', $req->email)->first();
+        if ($user && Hash::check($req->password, $user->password)) {
+            $token = $user->createToken('Personal Access Token')->plainTextToken;
+            $response = ['user' => $user, 'token' => $token];
+            return response()->json($response, 200);
+        }
+        $response = ['message' => 'Incorrect email or password'];
+        return response()->json($response, 400);
     }
 }
