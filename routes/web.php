@@ -31,3 +31,4 @@ Route::resource('/babs', BabController::class);
 Route::resource('/subbabs', SubBabController::class);
 
 Route::resource('/soals', SoalController::class);
+

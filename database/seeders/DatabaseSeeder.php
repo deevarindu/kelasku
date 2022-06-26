@@ -19,24 +19,24 @@ class DatabaseSeeder extends Seeder
       // Siswa::factory(3)->create();
 
       // SISWAS
-      DB::table('siswas')->insert([
-        'nama' => 'Aisyah Nadhira',
-        'kelas' => '7',
-        'email' => 'aisahndir@gmail.com',
-        'password' => Hash::make('123456'),
-      ]);
-      DB::table('siswas')->insert([
-        'nama' => 'Deeva Rindu Wijarista Putri',
-        'kelas' => '8',
-        'email' => 'deevabcd@gmail.com',
-        'password' => Hash::make('123456'),
-      ]);
-      DB::table('siswas')->insert([
-        'nama' => 'Kevin Benaya Sava Nugraha',
-        'kelas' => '9',
-        'email' => 'kepin@gmail.com',
-        'password' => Hash::make('123456'),
-      ]);
+      // DB::table('siswas')->insert([
+      //   'nama' => 'Aisyah Nadhira',
+      //   'kelas' => '7',
+      //   'email' => 'aisahndir@gmail.com',
+      //   'password' => Hash::make('123456'),
+      // ]);
+      // DB::table('siswas')->insert([
+      //   'nama' => 'Deeva Rindu Wijarista Putri',
+      //   'kelas' => '8',
+      //   'email' => 'deevabcd@gmail.com',
+      //   'password' => Hash::make('123456'),
+      // ]);
+      // DB::table('siswas')->insert([
+      //   'nama' => 'Kevin Benaya Sava Nugraha',
+      //   'kelas' => '9',
+      //   'email' => 'kepin@gmail.com',
+      //   'password' => Hash::make('123456'),
+      // ]);
 
       // MAPELS
       DB::table('mapels')->insert([
